@@ -169,7 +169,12 @@ const MainLayout = () => {
         </Stack>
 
         {/* main content */}
-        <Stack flex={1} bgColor={"white"} roundedTopLeft={"xl"} p={"2rem"}>
+        <Stack
+          flex={1}
+          bgColor={"white"}
+          roundedTopLeft={"xl"}
+          p={["2rem", "2rem", "3rem", "3rem", "3rem"]}
+        >
           <Outlet />
         </Stack>
       </Stack>

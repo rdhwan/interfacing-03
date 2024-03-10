@@ -106,7 +106,7 @@ const HistoryPage = () => {
       categories: data.map((d) => d.timestamp),
     },
     yaxis: {
-      max: 50,
+      max: 70,
       min: 0,
       decimalsInFloat: 2,
     },

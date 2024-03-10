@@ -1,11 +1,11 @@
-import { Text, Heading, Stack, Image } from "@chakra-ui/react";
+import { Text, Heading, Stack, Image, Tag } from "@chakra-ui/react";
 import TagLink from "../../../components/tag-link";
 
 const AboutPage = () => {
   return (
     <>
       <Stack gap={"1rem"} textAlign={"justify"}>
-        <Heading size={"lg"}>
+        <Heading size={"lg"} textAlign={"left"}>
           Microcontroller-PC Communication for Temperature Control in an
           Industrial Metrology Room
         </Heading>
@@ -24,8 +24,8 @@ const AboutPage = () => {
             />
           </Stack>
 
-          <Text>Albert Tirto Kusumo (68083)</Text>
-          <Text>Muhammad Fathan Ridhwan (69524)</Text>
+          <Tag colorScheme="blue">Albert Tirto Kusumo (68083)</Tag>
+          <Tag colorScheme="blue">Muhammad Fathan Ridhwan (69524)</Tag>
         </Stack>
         <Text>
           Welcome to our project! We've designed a system that helps monitor and

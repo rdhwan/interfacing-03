@@ -74,7 +74,7 @@ const Index = () => {
   const seriesOptions: ApexCharts.ApexOptions = {
     chart: {
       id: "realtime",
-      height: 350,
+      height: 250,
       type: "line",
       animations: {
         enabled: true,
@@ -104,7 +104,7 @@ const Index = () => {
       categories: data.map((d) => d.timestamp),
     },
     yaxis: {
-      max: 50,
+      max: 70,
       min: 0,
       decimalsInFloat: 2,
     },
@@ -115,7 +115,7 @@ const Index = () => {
 
   return (
     <Stack gap={"1rem"} textAlign={"justify"}>
-      <Heading size={"lg"}>Realtime</Heading>
+      <Heading size={"lg"}>Realtime Monitoring</Heading>
 
       <ApexCharts series={series} options={seriesOptions} />
     </Stack>
