@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "author": "Muhammad Fathan Ridhwan, Albert Tirto Kusumo",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    {
+      "type": "board-ds18b20",
+      "id": "temp1",
+      "top": -87.53,
+      "left": 109.68,
+      "attrs": { "deviceID": "111111111111" }
+    },
+    {
+      "type": "board-ds18b20",
+      "id": "temp2",
+      "top": -87.53,
+      "left": 157.68,
+      "attrs": { "deviceID": "222222222222" }
+    },
+    {
+      "type": "board-ds18b20",
+      "id": "temp3",
+      "top": -87.53,
+      "left": 205.68,
+      "attrs": { "deviceID": "333333333333" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -44.05,
+      "left": 19.2,
+      "attrs": { "value": "4700" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 35.2,
+      "left": 303.2,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-serial-port",
+      "id": "serial",
+      "top": 0,
+      "left": 0,
+      "attrs": { "baud": "115200" }
+    }
+  ],
+  "connections": [
+    [ "temp1:GND", "uno:GND.1", "black", [ "v18.97", "h8.15" ] ],
+    [ "uno:5V", "temp1:VCC", "red", [ "v19.1", "h-178.6", "v-230.4", "h153.6" ] ],
+    [ "temp1:DQ", "uno:12", "green", [ "v38.4", "h9.1" ] ],
+    [ "temp1:VCC", "temp2:VCC", "red", [ "v19.2", "h57.6" ] ],
+    [ "temp1:GND", "temp2:GND", "black", [ "v28.8", "h57.6" ] ],
+    [ "temp1:DQ", "temp2:DQ", "green", [ "v9.6", "h57.6" ] ],
+    [ "temp2:DQ", "temp3:DQ", "green", [ "v9.6", "h57.6" ] ],
+    [ "temp2:VCC", "temp3:VCC", "red", [ "v19.2", "h48" ] ],
+    [ "temp2:GND", "temp3:GND", "black", [ "v28.8", "h9.6" ] ],
+    [ "r1:2", "temp1:DQ", "green", [ "v0", "h8.4", "v9.6", "h38.4" ] ],
+    [ "uno:5V", "r1:1", "red", [ "v19.1", "h-178.6", "v-249.6" ] ],
+    [ "temp3:VCC", "lcd1:VCC", "red", [ "v19.2", "h48", "v57.6" ] ],
+    [ "temp3:GND", "lcd1:GND", "black", [ "v28.8", "h76.8", "v38.4" ] ],
+    [ "uno:A4", "lcd1:SDA", "green", [ "v19.1", "h42.6", "v-163.2" ] ],
+    [ "uno:A5", "lcd1:SCL", "green", [ "v28.7", "h42.7", "v-163.2" ] ],
+    [ "uno:1", "serial:RX", "", [] ],
+    [ "uno:0", "serial:TX", "", [] ]
+  ],
+  "dependencies": {}
+}
